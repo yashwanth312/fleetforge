@@ -37,7 +37,7 @@ Result: Rocky 9 and Ubuntu 24.04 LTS are selected (decision 0003). The Ubuntu fl
 
 ## What changed on the way
 
-The first plan used the newest OS releases and Hyper-V; the OS policy was narrowed to stable releases with CIS and scanner content, and the first plan used Hyper-V virtual machines (decision 0001). The lab platform was changed to VirtualBox (decision 0005) on request, before any VM was built.
+Two plans changed before any VM was built: the OS policy was narrowed from the newest releases to stable releases with CIS and scanner content (decision 0003), and the lab platform moved from Hyper-V to VirtualBox (decisions 0001 and 0005).
 
 ## Prediction check
 
