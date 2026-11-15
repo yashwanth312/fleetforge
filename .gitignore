@@ -1,0 +1,63 @@
+# Secrets, keys, tokens
+*.pem
+*.key
+*.pfx
+*id_rsa*
+*id_ed25519*
+*.token
+*token*.txt
+.env
+.env.*
+*.secret
+secrets/
+.vault_pass
+.vault_pass.*
+vault-password*
+vault_password*
+*.vault.pass
+
+# Ansible
+*.retry
+.ansible/
+ansible_facts_cache/
+
+# Molecule and test runners
+.molecule/
+.cache/
+.pytest_cache/
+.tox/
+
+# Packer
+packer_cache/
+*.auto.pkrvars.hcl
+crash.log
+
+# Vagrant and VM artifacts
+.vagrant/
+*.box
+*.iso
+*.vhd
+*.vhdx
+*.qcow2
+*.ova
+*.ovf
+*.vmdk
+*.vdi
+
+# Terraform-style local state (if ever used)
+*.tfstate
+*.tfstate.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors and OS files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
