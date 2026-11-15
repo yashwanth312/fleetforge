@@ -37,7 +37,7 @@ flowchart LR
 | Compliance | OpenSCAP with CIS Level 1 profiles | Scores each host before and after hardening |
 | Patching | Ansible `serial`, health checks | Canary first, then rolling batches; halts on a failed check; reboots only when the kernel changed |
 | Testing and CI | ansible-lint, Molecule, GitLab CE, Jenkinsfile | Tests every role change before it reaches the fleet |
-| Lab | Hyper-V virtual machines (see [decision 0001](decisions/0001-lab-platform.md)) | Six VMs, mixed OS families |
+| Lab | VirtualBox virtual machines (see [decision 0005](decisions/0005-lab-platform-virtualbox.md)) | Six VMs, mixed OS families |
 
 ## Design decisions
 

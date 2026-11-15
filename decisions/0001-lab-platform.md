@@ -1,7 +1,7 @@
 # 0001: Lab platform: Hyper-V virtual machines
 
 Date: 2026-11-15
-Status: Proposed
+Status: Superseded by [0005](0005-lab-platform-virtualbox.md)
 
 ## Context
 
@@ -28,3 +28,7 @@ Use Hyper-V virtual machines on an internal switch with a fixed private subnet (
 Trade-offs accepted: Hyper-V on Windows 11 Home is enabled through a workaround that Microsoft does not support. Vagrant's Hyper-V provider has limited networking, so VM creation is scripted instead. VirtualBox may turn out to be adequate; its speed on this host was not tested.
 
 Status moves to Accepted when Phase 1 records that the VMs boot, keep their addresses across a host restart, and fit in memory.
+
+## Update 2026-11-15
+
+The platform decision was made in favor of VirtualBox (decision 0005) before Phase 1 began, so this proposal was never accepted. It stays as the fallback if VirtualBox guests cannot boot the selected operating systems.
