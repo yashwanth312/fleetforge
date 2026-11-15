@@ -26,9 +26,13 @@ Trade-offs accepted: the newest OS release may not have a CIS Level 1 profile ye
 
 ## Update 2026-11-15
 
-Preliminary research ([evidence entry](../evidence/phase-0-foundation/2026-11-15T1140-preflight-research.md)) found:
+The policy was narrowed the same day: each OS family uses a **stable, established release** that has a published CIS Benchmark and scanner content (OpenSCAP or the vendor's tool), not necessarily the newest release. Tools still use the latest stable version at install time.
 
-- Rocky Linux: 10.2 is the newest release confirmed. The RHEL 10 SCAP content lists a draft CIS Level 1 Server profile; Rocky-specific content is not confirmed. Rocky Linux 10 requires the x86-64-v3 CPU level, so guests must see it.
-- Ubuntu: 26.04 LTS is the newest release. Automated scanner content for 26.04 was not confirmed; for 24.04 it was (Canonical's Ubuntu Security Guide profiles). The Ubuntu Security Guide requires Ubuntu Pro, which is free for personal use on up to five machines.
+Selected from the [preflight research](../evidence/phase-0-foundation/2026-11-15T1140-preflight-research.md):
 
-Phase 1 confirms scanner content on real guests before the fleet is built. If Ubuntu 26.04 has no CIS Level 1 profile in a scanner, the Ubuntu nodes use 24.04 and this record is updated again.
+- **Rocky Linux 9** (current point release, recorded in Phase 1). The CIS Benchmark exists for Rocky 9, and the SCAP Security Guide ships a Rocky 9 data stream (`ssg-rl9-ds.xml`).
+- **Ubuntu Server 24.04 LTS.** The CIS Benchmark exists and Canonical's Ubuntu Security Guide audits `cis_level1_server`; it needs Ubuntu Pro, which is free for personal use.
+
+Rocky Linux 10 and Ubuntu 26.04 are not used: their scanner content was not confirmed, and the design document's targets depend on a Level 1 scan that works. If a later phase needs a newer release, a new decision record supersedes this one.
+
+Phase 1 still confirms, on real guests, that `oscap info` lists a Rocky 9 CIS Level 1 profile and that `usg` lists `cis_level1_server` on Ubuntu 24.04, before the fleet is built.

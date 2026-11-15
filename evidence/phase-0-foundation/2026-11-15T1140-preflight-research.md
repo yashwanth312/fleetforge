@@ -22,9 +22,22 @@ Web searches of vendor documentation, release announcements and release trackers
 | Vagrant | 2.4.9, released 2025-08-21, is the newest stable release listed; the repository publishes 2.4.10 development builds | [Vagrant release list](https://releases.sh/hashicorp/vagrant-releases.md) | Check at install |
 | Vagrant from WSL2 | HashiCorp documents `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=1` to use the Windows VirtualBox from WSL; community guides add the `virtualbox_WSL2` plugin and require matching Vagrant versions on both sides | [Vagrant WSL documentation](https://developer.hashicorp.com/vagrant/docs/other/wsl) | Not confirmed on this host |
 
+### Second pass: selected releases (2026-11-15, about 12:00)
+
+| Item | Finding | Source |
+|---|---|---|
+| CIS Benchmark, Rocky Linux | CIS lists Rocky 10 (1.0.0), Rocky 9 (2.0.0) and Rocky 8 (3.0.0); a CIS update post lists a Rocky Linux 9 v3.0.0 | [CIS Rocky page](https://www.cisecurity.org/benchmark/rocky_linux), [CIS September 2026 update](https://www.cisecurity.org/insights/blog/cis-benchmarks-september-2026-update) |
+| CIS Benchmark, Ubuntu | CIS lists 24.04 (2.0.0) and 22.04 (3.0.0) and nothing newer | [CIS Ubuntu page](https://www.cisecurity.org/benchmark/ubuntu_linux/) |
+| Rocky 9 scanner content | A write-up of Rocky 9 shows a Rocky-specific data stream `ssg-rl9-ds.xml`; the profile it used was `cis` (Level 2 Server). Whether that stream also carries `cis_server_l1` is not shown | [CIS and OpenSCAP on Rocky 9](https://mtask.github.io/2023/09/09/cis-openscap-rl9.html) |
+| Scanner benchmark version | The RHEL 9 content aligns to CIS RHEL 9 v1.0.0 (2022), older than the current CIS Rocky 9 Benchmark, so OpenSCAP scores are against the scanner's profile and not the newest CIS document | [SCAP Security Guide man page](https://man.docs.euro-linux.com/EL%209/scap-security-guide/scap-security-guide.8) |
+| Ubuntu 24.04 scanner content | USG offers CIS Level 1 and 2 profiles; `usg audit cis_level1_server`; requires Ubuntu Pro | [Canonical, 2025-03-20](https://canonical.com/blog/hardening-automation-for-cis-benchmarks-now-available-for-ubuntu-24-04-lts) |
+| Ubuntu Pro cost | Free for personal use on up to 5 machines (one Canonical page says 5 physical machines; whether VMs count is not settled) | [Ubuntu Pro FAQ](https://discourse.ubuntu.com/t/ubuntu-pro-faq), [Ubuntu Pro page](https://ubuntu.com/advantage) |
+
+Result: Rocky 9 and Ubuntu 24.04 LTS are selected (decision 0003). The Ubuntu fleet stays at five machines or fewer.
+
 ## What changed on the way
 
-The first plan used Hyper-V virtual machines (decision 0001). The lab platform was changed to VirtualBox (decision 0005) on request, before any VM was built.
+The first plan used the newest OS releases and Hyper-V; the OS policy was narrowed to stable releases with CIS and scanner content, and the first plan used Hyper-V virtual machines (decision 0001). The lab platform was changed to VirtualBox (decision 0005) on request, before any VM was built.
 
 ## Prediction check
 

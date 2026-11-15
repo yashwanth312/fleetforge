@@ -74,7 +74,7 @@ Scores are reported per OS family because the benchmark content differs between 
 
 ## Lab notes
 
-The lab runs on one Windows 11 laptop (AMD Ryzen 9 8945HX, 15.3 GB RAM, one SSD). The fleet is six virtual machines, so canary and batch sizes are demonstrated at that scale. Versions are the latest stable releases at the time each component is installed ([decision 0003](decisions/0003-version-policy.md)); each evidence entry records the versions used and the date.
+The lab runs on one Windows 11 laptop (AMD Ryzen 9 8945HX, 15.3 GB RAM, one SSD). The fleet is six virtual machines, so canary and batch sizes are demonstrated at that scale. Operating systems are Rocky Linux 9 and Ubuntu Server 24.04 LTS, chosen because both have a published CIS Benchmark and working scanner content; tools use the latest stable release at install time ([decision 0003](decisions/0003-version-policy.md)); each evidence entry records the versions used and the date.
 
 ## Roadmap
 
