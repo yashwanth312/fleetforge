@@ -2,7 +2,7 @@
 
 A pipeline that builds identical, hardened Linux servers and patches them in small, health-checked batches, without anyone staying up all night.
 
-> **Status:** Phase 0 (repository foundation) in progress. Every number in this repository is either a target or a measured result with a link to its evidence. Nothing is claimed until it is measured.
+> **Status:** Phase 1 (lab VMs and inventory) in progress. Every number in this repository is either a target or a measured result with a link to its evidence. Nothing is claimed until it is measured.
 
 ## The problem
 
@@ -80,8 +80,8 @@ The lab runs on one Windows 11 laptop (AMD Ryzen 9 8945HX, 15.3 GB RAM, one SSD)
 
 | Phase | Scope | Gate | Status |
 |---|---|---|---|
-| 0 | Repository foundation | Repository pushed; secret scrub check passed; remote head equals local head | In progress |
-| 1 | Lab VMs and inventory | Every VM answers `ansible -m ping` by group; dynamic inventory returns environment and role groups; idle memory per OS measured | Not started |
+| 0 | Repository foundation | Repository pushed; secret scrub check passed; remote head equals local head | Done ([evidence](evidence/phase-0-foundation/2026-11-15T1215-phase-0-gate.md)) |
+| 1 | Lab VMs and inventory | Every VM answers `ansible -m ping` by group; dynamic inventory returns environment and role groups; idle memory per OS measured | In progress |
 | 2 | Baseline roles | Baseline applied to the whole fleet; a second run reports `changed=0`; SELinux enforcing on RHEL-family hosts | Not started |
 | 3 | OpenSCAP and CIS Level 1 | Before and after scans recorded per OS with reports saved | Not started |
 | 4 | Rolling patch playbook | Canary then batches run; a forced failure halts the run; reboot happens only when the kernel changed | Not started |
